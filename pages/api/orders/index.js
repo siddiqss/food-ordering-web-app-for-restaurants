@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import dbConnect from "../../../util/mongo";
 import Order from "../../../models/Order";
+// var mongoose = require('mongoose');
+// var Order = mongoose.model('Order')
 export default async function handler(req, res) {
     const {method} = req;
     await dbConnect();
@@ -14,7 +16,7 @@ export default async function handler(req, res) {
       }
     }
 
-    if(method="POST"){
+    if(method==="POST"){
       try {
         const order = await Order.create(req.body);
         res.status(201).json(order);

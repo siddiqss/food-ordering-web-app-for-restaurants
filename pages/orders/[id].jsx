@@ -1,14 +1,29 @@
 import styles from "../../styles/Order.module.css";
 import Image from "next/image";
 import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
-const Order = () => {
+const Order = ({path}) => {
+  const [order, setOrder] = useState({});
+  console.log(order);
   const status = 0;
   const statusFunc = (index) => {
     if (index - status < 1) return styles.done;
     if (index - status == 1) return styles.inProgress;
     if (index - status > 1) return styles.undone;
   };
+
+
+  async function getOrder() {
+    const res = await fetch(`http://localhost:3000/api/orders/${path.id}`);
+    const data = await res.json();
+    setOrder(data);
+  }
+  useEffect(() => {
+    getOrder();
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -41,28 +56,52 @@ const Order = () => {
             <Image src='/img/paid.png' width={30} height={30} alt='' />
             <span>Payment</span>
             <div className={styles.checkedIcon}>
-              <Image className={styles.checkedIcon} src='/img/checked.png' width={20} height={20} alt='' />
+              <Image
+                className={styles.checkedIcon}
+                src='/img/checked.png'
+                width={20}
+                height={20}
+                alt=''
+              />
             </div>
           </div>
           <div className={statusFunc(1)}>
             <Image src='/img/bake.png' width={30} height={30} alt='' />
             <span>Preparing</span>
             <div className={styles.checkedIcon}>
-              <Image className={styles.checkedIcon} src='/img/checked.png' width={20} height={20} alt='' />
+              <Image
+                className={styles.checkedIcon}
+                src='/img/checked.png'
+                width={20}
+                height={20}
+                alt=''
+              />
             </div>
           </div>
           <div className={statusFunc(2)}>
             <Image src='/img/bike.png' width={30} height={30} alt='' />
             <span>On the way</span>
             <div className={styles.checkedIcon}>
-              <Image className={styles.checkedIcon} src='/img/checked.png' width={20} height={20} alt='' />
+              <Image
+                className={styles.checkedIcon}
+                src='/img/checked.png'
+                width={20}
+                height={20}
+                alt=''
+              />
             </div>
           </div>
           <div className={statusFunc(3)}>
             <Image src='/img/delivered.png' width={30} height={30} alt='' />
             <span>Delivered</span>
             <div className={styles.checkedIcon}>
-              <Image className={styles.checkedIcon} src='/img/checked.png' width={20} height={20} alt='' />
+              <Image
+                className={styles.checkedIcon}
+                src='/img/checked.png'
+                width={20}
+                height={20}
+                alt=''
+              />
             </div>
           </div>
         </div>
@@ -86,6 +125,21 @@ const Order = () => {
       </div>
     </div>
   );
+};
+
+// export const getServerSideProps = async ({ params }) => {
+//   const res = await axios.get(`http://localhost:3000/orders/${params.id}`);
+//   return {
+//     props: {
+//       order: res.data,
+//     },
+//   };
+// };
+
+Order.getInitialProps = async (ctx) => {
+  return {
+    path: ctx.query,
+  };
 };
 
 export default Order;

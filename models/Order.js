@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// delete mongoose.connection.models['Order'];
 const OrderSchema = new mongoose.Schema(
   {
     customer: {
@@ -23,10 +24,17 @@ const OrderSchema = new mongoose.Schema(
     method: {
         type: Number,
         required: true
+    },
+    customer_phone_number: {
+      type: String,
+      required: true,
+      maxLength: 20
     }
   },
   { timestamps: true }
 );
 
-export default mongoose.model.Order ||
-  mongoose.model("Order", OrderSchema);
+export default (mongoose.models && mongoose.models.Order
+  ? mongoose.models.Order
+  : mongoose.model('Order', OrderSchema));
+
