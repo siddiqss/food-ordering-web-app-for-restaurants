@@ -1,7 +1,9 @@
+
+
 .mainAddButton {
     padding: 10px;
     margin: 20px;
-    background-color: #ff0022;
+    background-color: #44813e;
     width: 150px;
     border-radius: 10px;
     color: white;
@@ -24,7 +26,7 @@
   
   .wrapper {
     width: 500px;
-    background-color: white;
+    background-color: #fffadd;
     padding: 10px 50px;
     border-radius: 20px;
     display: flex;
@@ -89,9 +91,9 @@
   .extraItem {
     padding: 5px;
     font-size: 14px;
-    border: 1px solid tomato;
+    border: 1px solid #44813e;
     background-color: white;
-    color: tomato;
+    color: #44813e;
     margin-right: 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -100,7 +102,7 @@
   .addButton {
     width: 25%;
     border: none;
-    background-color: teal;
+    background-color: #44813e;
     color: white;
     font-weight: 500;
     cursor: pointer;

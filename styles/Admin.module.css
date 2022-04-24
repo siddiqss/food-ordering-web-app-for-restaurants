@@ -18,9 +18,9 @@
 }
 
 .button:first-child{
-    background-color: teal;
+    background-color: #92c24c;
     margin-right: 5px;
 }
 .button:last-child{
-    background-color: #ff0022;
+    background-color: #44813e;
 }

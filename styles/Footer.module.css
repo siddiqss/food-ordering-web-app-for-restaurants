@@ -1,6 +1,6 @@
 .container {
   height: calc(100vh-100px);
-  background-color: #222;
+  background-color: #92c24c;
   display: flex;
 }
 
@@ -20,14 +20,14 @@
 }
 .title{
     font-size: 18px;
-    color: #ff0022;
+    color: #44813e;
 }
 
 .text{
-    color: lightgray;
+    color: #ffeea8;
 }
 .tagline{
-    color: rgb(179, 178, 178);
+    color: #fbd848;
 }
 
 @media screen and (max-width: 480px) {

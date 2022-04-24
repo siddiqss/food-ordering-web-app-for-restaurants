@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -9,6 +10,7 @@ const login = () => {
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(false);
   const router = useRouter();
+
   const handleClick = async () => {
     try {
       await axios.post("http://localhost:3000/api/login", {

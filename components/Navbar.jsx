@@ -24,7 +24,8 @@ function Navbar() {
           <li className={styles.listItem}>Products</li>
           
           <li className={styles.listItem}>Menu</li>
-          <Image src='/img/logo.png' alt='' width='200px' height='160px' />
+          {/* <Image src='/img/logo.png' alt='' width='200px' height='160px' /> */}
+          <li className={styles.logo}>RESTAURANT</li>
           <li className={styles.listItem}>Events</li>
           <li className={styles.listItem}>Blog</li>
           <li className={styles.listItem}>Contact</li>

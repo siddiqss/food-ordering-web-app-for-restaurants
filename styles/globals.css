@@ -1,3 +1,11 @@
+/* :root{
+  --color-yellow: #fbd848,
+  --color-cream: #ffeea8,
+  --color-white: #fffadd,
+  --color-light-green: #92c24c,
+  --color-dark-green: #44813e
+} */
+
 html,
 body {
   padding: 0;
