@@ -14,7 +14,7 @@ export default function Home() {
   const [close, setClose] = useState(true);
 
   async function getProducts() {
-    const res = await fetch("http://localhost:3000/api/products");
+    const res = await fetch("/api/products");
     const data = await res.json();
     setPizzaList(data);
   }

@@ -12,7 +12,7 @@ function Product({ path }) {
   const [quantity, setQuantity] = useState(1);
 
   async function getProduct() {
-    const res = await fetch(`http://localhost:3000/api/products/${path.id}`);
+    const res = await fetch(`/api/products/${path.id}`);
     const data = await res.json();
     setPizza(data);
     setPrice(data.prices[0]);

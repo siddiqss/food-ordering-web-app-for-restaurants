@@ -16,7 +16,7 @@ const Order = ({path}) => {
 
 
   async function getOrder() {
-    const res = await fetch(`http://localhost:3000/api/orders/${path.id}`);
+    const res = await fetch(`/api/orders/${path.id}`);
     const data = await res.json();
     setOrder(data);
   }

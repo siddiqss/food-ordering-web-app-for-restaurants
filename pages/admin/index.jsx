@@ -19,7 +19,7 @@ const Index = () => {
   const handleDelete = async (id) => {
     try {
       const delRes = await axios.delete(
-        `http://localhost:3000/api/products/${id}`
+        `/api/products/${id}`
       );
       setProducts(products.filter((product) => product._id !== id));
     } catch (error) {
@@ -29,7 +29,7 @@ const Index = () => {
 
   const getProducts = async () => {
     try {
-      const products = await axios.get("http://localhost:3000/api/products");
+      const products = await axios.get("/api/products");
       setProducts(products.data);
     } catch (error) {
       console.log(error);
@@ -37,7 +37,7 @@ const Index = () => {
   };
   const getOrders = async () => {
     try {
-      const orders = await axios.get("http://localhost:3000/api/orders");
+      const orders = await axios.get("/api/orders");
       setOrders(orders.data);
     } catch (error) {
       console.log(error);
@@ -47,7 +47,7 @@ const Index = () => {
     const item = orders.filter((order) => order._id === id)[0];
     const currStatus = item.status;
     try {
-      const res = await axios.put(`http://localhost:3000/api/orders/${id}`, {
+      const res = await axios.put(`/api/orders/${id}`, {
         status: currStatus + 1,
       });
       setOrders([res.data, ...orders.filter((order) => order._id !== id)]);
