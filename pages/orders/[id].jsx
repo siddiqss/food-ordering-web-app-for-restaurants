@@ -37,16 +37,16 @@ const Order = ({path}) => {
             </tr>
             <tr className={styles.tr}>
               <td>
-                <span className={styles.id}>098765</span>
+                <span className={styles.id}>{order._id}</span>
               </td>
               <td>
-                <span className={styles.name}>Sherlock Holmes</span>
+                <span className={styles.name}>{order.customer}</span>
               </td>
               <td>
-                <span className={styles.address}>221B Baker Street</span>
+                <span className={styles.address}>{order.address}</span>
               </td>
               <td>
-                <span className={styles.total}>$19.98</span>
+                <span className={styles.total}>${Math.round(order.total)}</span>
               </td>
             </tr>
           </table>
