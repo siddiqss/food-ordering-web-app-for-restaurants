@@ -16,7 +16,7 @@ const Cart = () => {
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
   const cart = useSelector((state) => state.cart);
-  const amount = cart.total;
+  const amount = Math.round(cart.total);
   const currency = "USD";
   const style = { layout: "vertical" };
   const dispatch = useDispatch();
