@@ -3,7 +3,13 @@
 Restaurants can take orders directly to their website without using any third-party services like FoodPanda or UberEats etc. and save 20-30% cost.
 
 ## Demo
-[Try now](https://vercel.com)
+[Try now](https://food-ordering-for-restaurants.vercel.app)
+## Tech Stack
+- Next.js / React.js
+- Mongo DB
+- Plain CSS
+- Redux Toolkit for managing cart state
+- Cloudinary to host images
 
 ## How to use?
 - Clone this repo
